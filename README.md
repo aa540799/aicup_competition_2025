@@ -24,10 +24,9 @@ cd aicup_competition_2025
 (2) 確認已啟用對應的 conda 環境
 ```bash
 conda activate aicup_env
-
+```
 (3) 執行安裝腳本：
 ```bash
-chmod +x setup.sh
 ./setup.sh
 ```
 
@@ -40,7 +39,7 @@ chmod +x setup.sh
 （1）建立訓練資料存放資料夾
 ```bash
 cd aicup_competition_2025
-mkdir dataset/chgh
+mkdir -p dataset/chgh
 ```
 （2）將0001～0050的**影像（nii.gz）**及**標註檔（_gt.nii.gz）**放置資料到 dataset/chgh資料夾底下，結構如下
 ```text
@@ -56,9 +55,9 @@ dataset/
 （3）建立推論資料存放資料夾
 ```bash
 cd aicup_competition_2025
-mkdir output/chgh
+mkdir -p output/chgh
 cd output/chgh
-mkdir image infer
+mkdir -p image infer
 ```
 （4）將需要推論的0051～0100的**影像檔（nii.gz）**放置資料到 output/chgh/image資料夾底下，結構如下
 ```text

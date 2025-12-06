@@ -183,8 +183,8 @@ print("=" * 60)
 
 # --- 壓縮結果 ---
 try:
-    zip_target_dir = image_folder
-    zip_path_out = image_folder + "contest1" # 壓縮檔將存為 contest1.zip
+    zip_target_dir = infer_dir
+    zip_path_out = infer_dir + "contest1" # 壓縮檔將存為 contest1.zip
     
     print(f"正在將 {zip_target_dir} 壓縮至 {zip_path_out}.zip ...")
     
