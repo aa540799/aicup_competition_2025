@@ -1,7 +1,7 @@
 # AICUP 2025 心臟 CT 影像分割
 本專案參加 **AICUP 心臟影像分割競賽**，目標是針對心臟 CT 影像進行三維語意分割，預測多個心臟結構的標籤。  
 
->注意：**原始競賽資料集不隨專案釋出**，請自行至主辦單位平台下載，並依照下文「資料放置方式」整理目錄。
+注意：**原始競賽資料集不隨專案釋出**，請自行至主辦單位平台下載，並依照下文「資料放置方式」整理目錄。
 
 ## 1.取得專案 (Clone Repository)
 ```bash
@@ -14,7 +14,6 @@ git clone https://github.com/aa540799/aicup_competition_2025.git
 ```bash
 conda create -n aicup_env python=3.10 -y
 ```
-
 ## 3.使用 setup.sh 一次安裝主要套件
 (1) 確認已在專案根目錄：
 ```bash
@@ -78,22 +77,28 @@ output/
 資料/驗證/訓練比例為 40/7/3
 
 ## 5.訓練流程（Data Preparation）
-使用train_local.py
-在專案根目錄執行：
+請確定已在conda環境中（aicup_env）如果還未在環境中請先使用
 ```bash
-cd ~/aicup_competition_2025
 conda activate aicup_env
+```
+
+使用train_local.py
+```bash
+cd aicup_competition_2025
 python train_local.py 
 ```
 
 產生的權重檔會放在 exps/exps/swinunetr/chgh/tune.results/AICUP_training資料夾底下
 
 ## 6.推論與結果產生流程（Inference & Submission）
-使用predict.py
-在專案根目錄執行：
+請確定已在conda環境中（aicup_env）如果還未在環境中請先使用
 ```bash
-cd ~/aicup_competition_2025
 conda activate aicup_env
+```
+
+使用predict.py
+```bash
+cd aicup_competition_2025
 python predict.py
 ```
 
