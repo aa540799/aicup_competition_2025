@@ -7,38 +7,48 @@
 - 透過 `Ray Tune` 做實驗管理與訓練
 - 輸出 NIfTI segmentation 以及 CSV 結果，用於提交競賽
 
-> ⚠️ 注意：**原始競賽資料集不隨專案釋出**，請自行至主辦單位平台下載，並依照下文「資料放置方式」整理目錄。
+>注意：**原始競賽資料集不隨專案釋出**，請自行至主辦單位平台下載，並依照下文「資料放置方式」整理目錄。
 
----
+##1.取得專案 (Clone Repository)
+```bash
+git clone https://github.com/aa540799/aicup_competition_2025.git
 
-## 1. 專案結構 (Project Structure)
+##2.環境安裝 (Environment Setup)
+使用**miniconda** 安裝python3.10
 
-專案根目錄大致結構如下（省略部分檔案）：
+```bash
+conda create -n aicup_env python=3.10 -y
 
+##3.使用 setup.sh 一次安裝主要套件
+(1) 確認已在專案根目錄：
+```bash
+cd aicup_competition_2025
+
+(2) 確認已啟用對應的 conda 環境
+```bash
+conda activate aicup_env
+
+(3) 執行安裝腳本：
+```bash
+chmod +x setup.sh
+./setup.sh
+
+執行後須使用套件即可安裝完畢
+
+##4資料準備（Data Preparation）
+本專案不附任何影像或標註檔。
+使用者需自行依競賽規則向主辦單位取得資料集。
+
+（1）將0001～0050的**影像**及**標註檔**放置資料到 dataset/chgh資料夾底下，結構如下
 ```text
-aicup_competition/
-├── train_local.py                 # 本機訓練入口程式（包一層參數、呼叫 expers/tune.py）
-├── predict.py                     # 預測 / 產生提交檔的腳本
-├── expers/
-│   ├── args.py                    # 參數 parser 與 config 映射
-│   ├── train.py                   # 單次訓練流程
-│   ├── tune.py                    # 使用 Ray Tune 做實驗管理與訓練入口
-│   ├── infer.py                   # 推論流程相關程式
-│   └── ...
-├── exps/
-│   ├── data_dicts/
-│   │   └── chgh/
-│   │       └── AICUP_training.json   # 訓練 / 驗證資料分割設定
-│   └── exps/
-│       └── SwinUNETR/
-│           └── chgh/
-│               └── tune_results/     # 訓練過程產生的 log 與 checkpoint (gitignore)
-├── dataset/
-│   └── chgh/                      # 放競賽提供的 CT 與 label (不會 push 上 GitHub)
-├── models/                        # 儲存最佳 / 最終模型權重 (gitignore)
-├── output/
-│   └── chgh/
-│       ├── image/                 # 推論輸出之 NIfTI segmentation
-│       └── infer/                 # 產生提交用 CSV 等
-├── requirements.txt               # 專案依賴套件 (可選)
-└── README.md
+dataset/
+└── chgh/
+    ├── patient0001.nii.gz
+    ├── patient0001_label.nii.gz
+    ├── patient0002.nii.gz
+    ├── patient0002_label.nii.gz    
+    └── ...
+
+實際命名與對應關係需與 exps/data_dicts/chgh/AICUP_training.json 中設定一致。
+
+（1）設定 Data Dict（AICUP_training.json）
