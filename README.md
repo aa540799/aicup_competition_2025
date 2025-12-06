@@ -97,5 +97,5 @@ conda activate aicup_env
 python predict.py
 ```
 
-推論後的結果會放到output/chgh/infer底下，並將所有檔案包成一個壓縮檔contest1.zip用於送交競賽平台的結果檔
+推論後的結果會放到output/chgh/infer底下，並將所有檔案包成一個壓縮檔contest1.zip(檔案也放置於infer底下)用於送交競賽平台的結果檔
 
