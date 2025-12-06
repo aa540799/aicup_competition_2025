@@ -9,19 +9,19 @@
 
 >注意：**原始競賽資料集不隨專案釋出**，請自行至主辦單位平台下載，並依照下文「資料放置方式」整理目錄。
 
-##1.取得專案 (Clone Repository)
+## 1.取得專案 (Clone Repository)
 ```bash
 git clone https://github.com/aa540799/aicup_competition_2025.git
 ```
 
-##2.環境安裝 (Environment Setup)
+## 2.環境安裝 (Environment Setup)
 使用**miniconda** 安裝python3.10
 
 ```bash
 conda create -n aicup_env python=3.10 -y
 ```
 
-##3.使用 setup.sh 一次安裝主要套件
+## 3.使用 setup.sh 一次安裝主要套件
 (1) 確認已在專案根目錄：
 ```bash
 cd aicup_competition_2025
@@ -39,7 +39,7 @@ chmod +x setup.sh
 
 執行後須使用套件即可安裝完畢
 
-##4資料準備（Data Preparation）
+## 4資料準備（Data Preparation）
 本專案不附任何影像或標註檔。
 使用者需自行依競賽規則向主辦單位取得資料集。
 
