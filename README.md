@@ -33,7 +33,7 @@ chmod +x setup.sh
 
 執行後須使用套件即可安裝完畢
 
-## 4資料準備（Data Preparation）
+## 4.資料準備（Data Preparation）
 本專案不附任何影像或標註檔。
 使用者需自行依競賽規則向主辦單位取得資料集。
 
@@ -78,7 +78,7 @@ output/
 （2）設定 Data Dict（AICUP_training.json）
 資料/驗證/訓練比例為 40/7/3
 
-## 5訓練流程（Data Preparation）
+## 5.訓練流程（Data Preparation）
 使用train_local.py
 在專案根目錄執行：
 ```bash
@@ -89,7 +89,7 @@ python train_local.py
 
 產生的權重檔會放在 exps/exps/swinunetr/chgh/tune.results/AICUP_training資料夾底下
 
-## 6推論與結果產生流程（Inference & Submission）
+## 6.推論與結果產生流程（Inference & Submission）
 使用predict.py
 在專案根目錄執行：
 ```bash
