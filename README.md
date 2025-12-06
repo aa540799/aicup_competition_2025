@@ -12,17 +12,20 @@
 ##1.取得專案 (Clone Repository)
 ```bash
 git clone https://github.com/aa540799/aicup_competition_2025.git
+```
 
 ##2.環境安裝 (Environment Setup)
 使用**miniconda** 安裝python3.10
 
 ```bash
 conda create -n aicup_env python=3.10 -y
+```
 
 ##3.使用 setup.sh 一次安裝主要套件
 (1) 確認已在專案根目錄：
 ```bash
 cd aicup_competition_2025
+```
 
 (2) 確認已啟用對應的 conda 環境
 ```bash
@@ -32,6 +35,7 @@ conda activate aicup_env
 ```bash
 chmod +x setup.sh
 ./setup.sh
+```
 
 執行後須使用套件即可安裝完畢
 
@@ -48,6 +52,7 @@ dataset/
     ├── patient0002.nii.gz
     ├── patient0002_label.nii.gz    
     └── ...
+```
 
 實際命名與對應關係需與 exps/data_dicts/chgh/AICUP_training.json 中設定一致。
 
